@@ -8,8 +8,8 @@ class ListItem:
     # """
 
     def __init__(self, value):
-        self.value = value
-        self.next_element = None
+        self.value: int = value
+        self.next_element: ListItem = None
 
 
 class ListStructure:
@@ -24,7 +24,7 @@ class ListStructure:
     def __init__(self):
         self.first: ListItem = None
         self.last: ListItem = None
-        self.__count = 0
+        self.__count: int = 0
 
     def insert(self, value: int):
         # """
@@ -59,7 +59,7 @@ class ListStructure:
             return False
 
         current: ListItem = self.first
-        is_found = False
+        is_found: bool = False
         if self.first.value == removing_value:
             self.first = self.first.next_element
             is_found = True
@@ -73,7 +73,8 @@ class ListStructure:
             self.__count -= 1
         return is_found
 
-    def find(self, value):
+    def find(self, value: int):
+        # """
         #   """
         #   Find the first ListItem in the LinkedList that contains the given value.
 
@@ -86,7 +87,7 @@ class ListStructure:
         current: ListItem = self.first
         while current:
             if current.value == value:
-                return current.__str__()
+                return current
             current = current.next_element
         return False
 
